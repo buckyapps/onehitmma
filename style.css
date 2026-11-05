@@ -1,0 +1,26 @@
+/*
+Theme Name: 1 Hit MMA
+Theme URI: https://onehitmma.com
+Author: Custom for Aldo Oreggia / One Hit MMA
+Author URI: https://onehitmma.com
+Description: Modern, clean, high-performance theme for 1 Hit MMA – Kickboxing, Jiu-Jitsu & MMA gym in Layton, Utah. Includes easy schedule editing, notification bar, testimonials, and Instagram-ready sections.
+Version: 1.6.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: onehitmma
+Tags: martial-arts, gym, dark, custom-logo, custom-menu, featured-images, theme-options
+*/
+
+/* 
+  Main styles are loaded via Tailwind CDN + assets/css/main.css 
+  This file is required by WordPress for theme recognition.
+*/
+
+:root {
+  --brand-red: #c41e3a;
+  --brand-dark: #0a0a0a;
+  --brand-gray: #1a1a1a;
+}

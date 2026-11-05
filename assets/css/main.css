@@ -1,0 +1,435 @@
+/* 1 Hit MMA – Main Theme Styles + Critical fallbacks */
+
+:root {
+  --brand-red: #c41e3a;
+  --brand-dark: #0a0a0a;
+  --brand-gray: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Critical base styles so the site is never plain white */
+body {
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: #c41e3a;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.bg-brand-red,
+a.bg-brand-red,
+button.bg-brand-red {
+  background-color: #c41e3a !important;
+  color: #fff !important;
+}
+
+.bg-brand-red:hover,
+a.bg-brand-red:hover {
+  background-color: #a01830 !important;
+}
+
+/* Section backgrounds */
+.bg-brand-gray,
+section.bg-brand-gray {
+  background-color: #1a1a1a !important;
+}
+
+.bg-brand-dark {
+  background-color: #0a0a0a !important;
+}
+
+/* Typography helpers */
+.font-display {
+  font-family: Oswald, Impact, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.text-brand-red {
+  color: #c41e3a !important;
+}
+
+.text-gray-300 { color: #d1d5db !important; }
+.text-gray-400 { color: #9ca3af !important; }
+.text-gray-500 { color: #6b7280 !important; }
+
+/* Layout helpers */
+.max-w-6xl { max-width: 72rem; margin-left: auto; margin-right: auto; }
+.max-w-5xl { max-width: 64rem; margin-left: auto; margin-right: auto; }
+.max-w-4xl { max-width: 56rem; margin-left: auto; margin-right: auto; }
+.max-w-2xl { max-width: 42rem; margin-left: auto; margin-right: auto; }
+
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.pt-24 { padding-top: 6rem; }
+.pb-20 { padding-bottom: 5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+.mb-12 { margin-bottom: 3rem; }
+.mb-14 { margin-bottom: 3.5rem; }
+
+.text-center { text-align: center; }
+.font-bold { font-weight: 700; }
+.uppercase { text-transform: uppercase; }
+.rounded { border-radius: 0.25rem; }
+.rounded-lg { border-radius: 0.5rem; }
+
+/* Hero */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.min-h-screen { min-height: 100vh; }
+.object-cover { object-fit: cover; }
+.object-center { object-position: center; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.overflow-hidden { overflow: hidden; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+/* Grid */
+.grid { display: grid; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+.gap-10 { gap: 2.5rem; }
+.gap-12 { gap: 3rem; }
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .md\:flex { display: flex; }
+  .md\:hidden { display: none; }
+  .md\:min-h-screen { min-height: 100vh; }
+}
+
+@media (max-width: 767px) {
+  .md\:hidden { display: none !important; }
+  .min-h-\[50vh\] { min-height: 50vh; }
+  .min-h-\[65vh\] { min-height: 65vh; }
+}
+
+/* Cards / borders */
+.border { border-width: 1px; }
+.border-white\/10 { border-color: rgba(255, 255, 255, 0.1); }
+.bg-black\/50 { background-color: rgba(0, 0, 0, 0.5); }
+
+/* Form elements */
+input, select, textarea {
+  font-size: 16px;
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: text !important;
+  pointer-events: auto !important;
+}
+button, input[type="submit"] {
+  cursor: pointer !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #c41e3a;
+}
+
+/* Focus accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #c41e3a;
+  outline-offset: 2px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+}
+thead {
+  background-color: #1a1a1a;
+}
+
+/* Sticky site header: announcement + nav stay together */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+#onehit-notice {
+  background-color: #c41e3a;
+  color: #fff;
+}
+body.has-notice {
+  padding-top: var(--notice-h, 2.75rem);
+}
+
+/* Instagram placeholder */
+.instagram-feed-placeholder img {
+  border-radius: 0.5rem;
+}
+
+/* Responsive display type for WHY ONE HIT MMA */
+.text-4xl { font-size: 2.25rem; line-height: 0.85; }
+.text-5xl { font-size: 3rem; line-height: 0.85; }
+.text-6xl { font-size: 3.75rem; line-height: 0.85; }
+.text-7xl { font-size: 4.5rem; line-height: 0.85; }
+.text-8xl { font-size: 6rem; line-height: 0.85; }
+.text-9xl { font-size: 8rem; line-height: 0.85; }
+
+@media (min-width: 640px) {
+  .sm\:text-6xl { font-size: 3.75rem; }
+  .sm\:text-xl { font-size: 1.25rem; }
+}
+@media (min-width: 768px) {
+  .md\:text-7xl { font-size: 4.5rem; }
+  .md\:text-2xl { font-size: 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .lg\:text-8xl { font-size: 6rem; }
+  .lg\:text-3xl { font-size: 1.875rem; }
+}
+@media (min-width: 1280px) {
+  .xl\:text-9xl { font-size: 8rem; }
+}
+
+/* Extra-large MMA line */
+.text-\[10rem\] { font-size: 10rem; line-height: 0.8; }
+@media (max-width: 639px) {
+  .text-6xl { font-size: 3.75rem; }
+}
+
+
+/* ---- Newsletter / form fixes ---- */
+#mobile-menu.hidden {
+  display: none !important;
+}
+
+#newsletter {
+  scroll-margin-top: 8rem;
+  position: relative;
+  z-index: 1;
+}
+
+#newsletter input[type="email"],
+#newsletter input[type="text"],
+.onehit-newsletter-form input,
+input[name="newsletter_email"] {
+  pointer-events: auto !important;
+  -webkit-user-select: text !important;
+  user-select: text !important;
+  cursor: text !important;
+  position: relative;
+  z-index: 30;
+  background: #000 !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  width: 100%;
+  min-height: 48px;
+  font-size: 16px !important;
+  opacity: 1 !important;
+}
+
+/* Never show the "not allowed" cursor on form fields */
+input, select, textarea, button, label {
+  cursor: auto;
+}
+input[type="email"],
+input[type="text"],
+input[type="tel"],
+input[type="search"],
+textarea {
+  cursor: text !important;
+}
+button,
+input[type="submit"],
+.onehit-newsletter-form button {
+  cursor: pointer !important;
+}
+
+.onehit-newsletter-form {
+  position: relative;
+  z-index: 20;
+}
+
+.onehit-newsletter-form button {
+  position: relative;
+  z-index: 30;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+
+/* ==== Form cursor overrides (must win) ==== */
+.onehit-newsletter-form,
+.onehit-newsletter-form *,
+#newsletter,
+#newsletter * {
+  cursor: auto !important;
+}
+
+.onehit-newsletter-form input[type="email"],
+.onehit-newsletter-form input[type="text"],
+#newsletter input[type="email"],
+input[name="newsletter_email"] {
+  cursor: text !important;
+  pointer-events: auto !important;
+}
+
+.onehit-newsletter-form button,
+.onehit-newsletter-form button *,
+#newsletter button,
+button[type="submit"] {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+/* Gallery */
+.onehit-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .onehit-gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+.onehit-gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #111;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+.onehit-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.onehit-gallery-item:hover img {
+  transform: scale(1.05);
+}
+.onehit-gallery-cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  text-align: left;
+}
+
+.onehit-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 3.5rem 4rem;
+}
+.onehit-lightbox[hidden] {
+  display: none !important;
+}
+.onehit-lightbox img {
+  max-width: 100%;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.onehit-lightbox-close,
+.onehit-lightbox-prev,
+.onehit-lightbox-next {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+}
+.onehit-lightbox-close {
+  top: 0.75rem;
+  right: 1rem;
+  font-size: 2.5rem;
+}
+.onehit-lightbox-prev,
+.onehit-lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+.onehit-lightbox-prev { left: 0.5rem; }
+.onehit-lightbox-next { right: 0.5rem; }
+.onehit-lightbox-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #d1d5db;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+
+
+.hero-fallback { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+  .hero-fallback { display: block; }
+}
