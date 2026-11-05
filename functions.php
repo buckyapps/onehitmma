@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('ONEHIT_VERSION', '1.6.0');
+define('ONEHIT_VERSION', '1.6.1');
 define('ONEHIT_DIR', get_template_directory());
 define('ONEHIT_URI', get_template_directory_uri());
 
@@ -1194,7 +1194,10 @@ add_action('admin_init', 'onehit_ensure_core_templates');
 /**
  * SEO: Custom titles, meta descriptions, LocalBusiness schema
  */
-function onehit_document_title($title) {
+/**
+ * Force custom SEO titles even when an SEO plugin (Yoast, Rank Math, etc.) is active.
+ */
+function onehit_force_seo_title($title = '') {
     if (is_front_page() || is_home()) {
         return 'MMA, Kickboxing & Jiu-Jitsu Gym in Layton, UT | One Hit MMA';
     }
@@ -1209,7 +1212,35 @@ function onehit_document_title($title) {
     }
     return $title;
 }
-add_filter('pre_get_document_title', 'onehit_document_title');
+
+// High-priority overrides
+add_filter('pre_get_document_title', 'onehit_force_seo_title', 9999);
+add_filter('document_title_parts', function($parts) {
+    $forced = onehit_force_seo_title('');
+    if ($forced) {
+        $parts['title'] = $forced;
+        unset($parts['site'], $parts['tagline']);
+    }
+    return $parts;
+}, 9999);
+
+// Yoast SEO
+add_filter('wpseo_title', 'onehit_force_seo_title', 9999);
+add_filter('wpseo_opengraph_title', 'onehit_force_seo_title', 9999);
+
+// Rank Math
+add_filter('rank_math/frontend/title', 'onehit_force_seo_title', 9999);
+add_filter('rank_math/opengraph/facebook/title', 'onehit_force_seo_title', 9999);
+
+// All in One SEO
+add_filter('aioseo_title', 'onehit_force_seo_title', 9999);
+add_filter('aioseo_facebook_tags', function($meta) {
+    $forced = onehit_force_seo_title('');
+    if ($forced && isset($meta['og:title'])) {
+        $meta['og:title'] = $forced;
+    }
+    return $meta;
+}, 9999);
 
 function onehit_meta_description() {
     $desc = '';
