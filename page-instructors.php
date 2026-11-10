@@ -10,7 +10,7 @@ $coaches = array(
     'role'  => 'Founder · Kickboxing & MMA',
     'photo' => 'https://onehitmma.com/wp-content/uploads/2014/10/Coach-Aldo-working-one-on-one-v2.jpg',
     'meta'  => 'São Paulo, Brazil',
-    'bio'   => 'Aldo is a 4th degree kickboxing black belt, Kyokushin black belt, and two-time Brazilian National ISKA Champion. He built 1 Hit MMA around real training — not fitness trends.',
+    'bio'   => 'Aldo is a 4th degree kickboxing black belt, Kyokushin black belt, and two-time Brazilian National ISKA Champion. He built One Hit MMA around real training — not fitness trends.',
   ),
   array(
     'name'  => 'Gustavo Rodrigues',
@@ -33,7 +33,7 @@ $coaches = array(
   <div class="max-w-5xl mx-auto px-4">
     <div class="text-center mb-12 sm:mb-16">
       <p class="text-brand-red font-display tracking-widest text-sm uppercase mb-3">The Team</p>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">COACHES</h1>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">Our Coaches in Layton, Utah</h1>
       <p class="text-gray-400 max-w-2xl mx-auto">Experienced coaches. Real martial arts.</p>
     </div>
     <div class="space-y-14">

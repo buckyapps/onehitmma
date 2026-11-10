@@ -13,7 +13,7 @@ $hero_text = onehit_get_option('onehit_hero_text', 'Authentic Kickboxing, Jiu-Ji
 <?php if (isset($_GET['newsletter']) && $_GET['newsletter'] === 'success') : ?>
 <div class="newsletter-page-banner" style="position:relative;z-index:40;background:#14532d;border-bottom:3px solid #22c55e;color:#bbf7d0;text-align:center;padding:1rem 1.25rem;">
   <p style="margin:0;font-weight:700;font-size:1.1rem;">You're on the list!</p>
-  <p style="margin:0.35rem 0 0;font-size:0.95rem;">Gym updates, schedule changes, and announcements from 1 Hit MMA will be sent to this email.</p>
+  <p style="margin:0.35rem 0 0;font-size:0.95rem;">Gym updates, schedule changes, and announcements from One Hit MMA will be sent to this email.</p>
 </div>
 <?php elseif (isset($_GET['newsletter']) && $_GET['newsletter'] === 'error') : ?>
 <div class="newsletter-page-banner" style="position:relative;z-index:40;background:#450a0a;border-bottom:3px solid #c41e3a;color:#fecaca;text-align:center;padding:1rem 1.25rem;">
@@ -38,7 +38,7 @@ $hero_text = onehit_get_option('onehit_hero_text', 'Authentic Kickboxing, Jiu-Ji
   
   <div class="relative max-w-6xl mx-auto px-4 text-center">
     <div class="flex justify-center mb-5 sm:mb-6">
-      <img src="<?php echo esc_url($circle_logo); ?>" alt="1 Hit MMA" 
+      <img src="<?php echo esc_url($circle_logo); ?>" alt="One Hit MMA" 
            class="w-52 sm:w-64 md:w-72 lg:w-80 xl:w-96 h-auto drop-shadow-2xl">
     </div>
     <h1 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-4 sm:mb-5">MMA, Kickboxing & Jiu-Jitsu in Layton, Utah</h1>
@@ -64,7 +64,7 @@ $hero_text = onehit_get_option('onehit_hero_text', 'Authentic Kickboxing, Jiu-Ji
       <a href="https://maps.app.goo.gl/MRWUpjn7TbfRGznCA"
          target="_blank" rel="noopener"
          class="hover:text-white underline transition">
-        <?php echo esc_html(onehit_get_option('onehit_address', '192 N Fairfield Rd #2, Layton, UT')); ?>
+        <?php echo esc_html(onehit_get_option('onehit_address', '192 N Fairfield Rd, Suite 2, Layton, UT 84041')); ?>
       </a>
     </p>
   </div>
@@ -92,7 +92,7 @@ $hero_text = onehit_get_option('onehit_hero_text', 'Authentic Kickboxing, Jiu-Ji
       
       <div class="relative overflow-hidden border border-white/10 p-8 rounded-lg hover:border-brand-red/50 transition group min-h-[280px] flex flex-col justify-end">
         <div class="absolute inset-0">
-          <img src="<?php echo esc_url(ONEHIT_URI . '/assets/images/jiujitsu-bg.jpg'); ?>" alt="1 Hit MMA jiu-jitsu grappling on the mat" class="w-full h-full object-cover object-center">
+          <img src="<?php echo esc_url(ONEHIT_URI . '/assets/images/jiujitsu-bg.jpg'); ?>" alt="One Hit MMA jiu-jitsu grappling on the mat" class="w-full h-full object-cover object-center">
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40"></div>
         </div>
         <div class="relative">
@@ -103,7 +103,7 @@ $hero_text = onehit_get_option('onehit_hero_text', 'Authentic Kickboxing, Jiu-Ji
       
       <div class="relative overflow-hidden border border-white/10 p-8 rounded-lg hover:border-brand-red/50 transition group min-h-[280px] flex flex-col justify-end">
         <div class="absolute inset-0">
-          <img src="<?php echo esc_url(ONEHIT_URI . '/assets/images/mma-kids-bg-v2.jpg'); ?>" alt="1 Hit MMA kids champions" class="w-full h-full object-cover object-[center_25%]">
+          <img src="<?php echo esc_url(ONEHIT_URI . '/assets/images/mma-kids-bg-v2.jpg'); ?>" alt="One Hit MMA kids champions" class="w-full h-full object-cover object-[center_25%]">
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40"></div>
         </div>
         <div class="relative">
@@ -138,7 +138,7 @@ $hero_text = onehit_get_option('onehit_hero_text', 'Authentic Kickboxing, Jiu-Ji
           REAL TRAINING.<br>REAL RESULTS.
         </h2>
         <p class="text-gray-300 mb-6 leading-relaxed">
-          Founded by two-time Brazilian National ISKA Champion Aldo Oreggia, 1 Hit MMA is a no-nonsense training center built for people who want authentic martial arts — not fitness trends.
+          Founded by two-time Brazilian National ISKA Champion Aldo Oreggia, One Hit MMA is a no-nonsense training center built for people who want authentic martial arts — not fitness trends.
         </p>
         <p class="text-gray-400 mb-8 leading-relaxed">
           Whether you're a complete beginner, a parent looking for a positive environment for your kids, or a competitor preparing for fights, you'll train with experienced coaches in a supportive, high-energy gym.

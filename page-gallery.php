@@ -11,8 +11,8 @@ $photos = onehit_get_gallery();
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-10 sm:mb-14">
       <p class="text-brand-red font-display tracking-widest text-sm uppercase mb-3">Inside the Gym</p>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">GALLERY</h1>
-      <p class="text-gray-400 max-w-2xl mx-auto">Fights, training, kids classes, and life at 1 Hit MMA.</p>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">One Hit MMA Photo Gallery</h1>
+      <p class="text-gray-400 max-w-2xl mx-auto">Fights, training, kids classes, and life at One Hit MMA.</p>
     </div>
 
     <?php if (empty($photos)) : ?>

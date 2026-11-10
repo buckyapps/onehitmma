@@ -10,7 +10,7 @@ $aldo_img = get_template_directory_uri() . '/assets/images/aldo-wrapping.jpg';
   <div class="max-w-5xl mx-auto px-4">
     <div class="text-center mb-12 sm:mb-16">
       <p class="text-brand-red font-display tracking-widest text-sm uppercase mb-3">Our Story</p>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">ABOUT 1 HIT MMA</h1>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">About One Hit MMA in Layton, Utah</h1>
     </div>
 
     <!-- Aldo intro with photo -->
@@ -19,10 +19,10 @@ $aldo_img = get_template_directory_uri() . '/assets/images/aldo-wrapping.jpg';
         <p class="text-brand-red font-display tracking-widest text-sm uppercase mb-3">The Founder</p>
         <h2 class="font-display text-3xl sm:text-4xl font-bold mb-5 leading-tight">ALDO OREGGIA</h2>
         <p class="text-gray-300 text-lg leading-relaxed mb-5">
-          1 Hit MMA was founded with heart, soul, and grit by Layton local and two-time Brazilian National ISKA Champion <strong class="text-white">Aldo Oreggia</strong>. His passion is helping others experience the life-changing benefits of authentic martial arts training.
+          One Hit MMA was founded with heart, soul, and grit by Layton local and two-time Brazilian National ISKA Champion <strong class="text-white">Aldo Oreggia</strong>. His passion is helping others experience the life-changing benefits of authentic martial arts training.
         </p>
         <p class="text-gray-400 leading-relaxed mb-5">
-          Founded by a two-time Brazilian National ISKA Champion, 1 Hit MMA is a no-nonsense training center built for people who want authentic martial arts — not fitness trends.
+          Founded by a two-time Brazilian National ISKA Champion, One Hit MMA is a no-nonsense training center built for people who want authentic martial arts — not fitness trends.
         </p>
         <p class="text-gray-400 leading-relaxed">
           Whether you're a complete beginner, a parent looking for a positive environment for your kids, or a competitor preparing for fights, you'll train with experienced coaches in a supportive, high-energy gym.
@@ -31,7 +31,7 @@ $aldo_img = get_template_directory_uri() . '/assets/images/aldo-wrapping.jpg';
       <div class="order-1 md:order-2">
         <div class="rounded-lg overflow-hidden border border-white/10 shadow-2xl">
           <img src="<?php echo esc_url($aldo_img); ?>" 
-               alt="Aldo Oreggia at 1 Hit MMA" 
+               alt="Aldo Oreggia at One Hit MMA" 
                class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-500">
         </div>
         <p class="text-center text-gray-500 text-xs mt-3 tracking-wide uppercase">Aldo Oreggia — Founder &amp; Coach</p>
@@ -41,7 +41,7 @@ $aldo_img = get_template_directory_uri() . '/assets/images/aldo-wrapping.jpg';
     <!-- Theme copy only. Old Divi page body is not printed. -->
     <div class="space-y-8 text-gray-300 leading-relaxed max-w-3xl mx-auto">
       <p>
-        Unlike cookie-cutter fitness studios, 1 Hit MMA offers real martial arts instruction led by coaches who have trained for years and competed at a high level. We focus on Kickboxing, Jiu-Jitsu, MMA, and structured kids programs in a safe, supportive, family-friendly environment.
+        Unlike cookie-cutter fitness studios, One Hit MMA offers real martial arts instruction led by coaches who have trained for years and competed at a high level. We focus on Kickboxing, Jiu-Jitsu, MMA, and structured kids programs in a safe, supportive, family-friendly environment.
       </p>
 
       <div class="bg-brand-gray border border-white/10 rounded-lg p-8 my-10">
@@ -60,7 +60,7 @@ $aldo_img = get_template_directory_uri() . '/assets/images/aldo-wrapping.jpg';
         Professionals, amateurs, and complete beginners. Men, women, and children. We have helped people of all ages, backgrounds, and skill levels reach their personal goals — from getting in the best shape of their lives to competing and winning fights.
       </p>
       <p>
-        Martial arts training develops physical fitness, practical self-defense skills, and mental strength. It isn’t only about fighting. At 1 Hit MMA you decide how hard you want to push and how much contact you want.
+        Martial arts training develops physical fitness, practical self-defense skills, and mental strength. It isn’t only about fighting. At One Hit MMA you decide how hard you want to push and how much contact you want.
       </p>
     </div>
 

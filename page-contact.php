@@ -11,7 +11,7 @@ $success = isset($_GET['contact']) && $_GET['contact'] === 'success';
   <div class="max-w-5xl mx-auto px-4">
     <div class="text-center mb-12">
       <p class="text-brand-red font-display tracking-widest text-sm uppercase mb-3">Get In Touch</p>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">CONTACT 1 HIT MMA</h1>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">Contact One Hit MMA in Layton, Utah</h1>
       <p class="text-gray-400 max-w-xl mx-auto">Questions about classes, membership, or the gym? Call, email, or send a message below.</p>
     </div>
 

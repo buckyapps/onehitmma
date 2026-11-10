@@ -47,7 +47,7 @@ foreach ($grouped as $d => $rows) {
   <div class="max-w-5xl mx-auto px-4">
     <div class="text-center mb-12">
       <p class="text-brand-red font-display tracking-widest text-sm uppercase mb-3">Weekly Classes</p>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">CLASS SCHEDULE</h1>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">Class Schedule in Layton, Utah</h1>
       <p class="text-gray-400 max-w-xl mx-auto">Drop-ins and new members welcome. Call or message us to confirm current times.</p>
     </div>
 

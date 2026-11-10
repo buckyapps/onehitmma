@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="border-t border-white/10 pt-6 text-center text-xs text-gray-500">
-      &copy; <?php echo date('Y'); ?> 1 Hit MMA. All rights reserved. &nbsp;|&nbsp; Layton, Utah
+      &copy; <?php echo date('Y'); ?> One Hit MMA. All rights reserved. &nbsp;|&nbsp; Layton, Utah
     </div>
   </div>
 </footer>

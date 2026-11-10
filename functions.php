@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('ONEHIT_VERSION', '1.6.3');
+define('ONEHIT_VERSION', '1.6.4');
 define('ONEHIT_DIR', get_template_directory());
 define('ONEHIT_URI', get_template_directory_uri());
 
@@ -1202,13 +1202,19 @@ function onehit_force_seo_title($title = '') {
         return 'MMA, Kickboxing & Jiu-Jitsu Gym in Layton, UT | One Hit MMA';
     }
     if (is_page('schedule')) {
-        return 'Class Schedule | One Hit MMA – Layton, UT';
+        return 'Class Schedule: Kickboxing, BJJ & Wrestling | One Hit MMA';
     }
-    if (is_page('about') || is_page('instructors')) {
-        return 'About 1 Hit MMA | Kickboxing, Jiu-Jitsu & MMA in Layton, Utah';
+    if (is_page('about')) {
+        return 'About One Hit MMA | Layton Martial Arts Gym';
+    }
+    if (is_page('instructors')) {
+        return 'Coaches: Kickboxing & BJJ Black Belts | One Hit MMA';
     }
     if (is_page('contact') || is_page('contact-us')) {
-        return 'Contact One Hit MMA | Layton, UT Gym';
+        return 'Contact & Directions | One Hit MMA, Layton UT';
+    }
+    if (is_page('gallery')) {
+        return 'Photo Gallery | One Hit MMA Martial Arts, Layton UT';
     }
     return $title;
 }
@@ -1245,31 +1251,54 @@ add_filter('aioseo_facebook_tags', function($meta) {
 function onehit_meta_description() {
     $desc = '';
     if (is_front_page() || is_home()) {
-        $desc = 'Train MMA, kickboxing, and Brazilian Jiu-Jitsu at One Hit MMA in Layton, Utah. Authentic fight gym for beginners, kids, and competitors. Call (801) 644-5707.';
+        $desc = 'Train kickboxing, jiu-jitsu, wrestling, MMA and kids classes at One Hit MMA in Layton, Utah. All levels welcome, drop-ins OK. Call (801) 644-5707.';
     } elseif (is_page('schedule')) {
-        $desc = 'View the weekly class schedule at One Hit MMA in Layton, UT. Striking, grappling, and advanced MMA classes for all ages and levels.';
-    } elseif (is_page('about') || is_page('instructors')) {
-        $desc = 'Meet the coaches at One Hit MMA. Founded by two-time Brazilian National ISKA Champion Aldo Oreggia. Real martial arts training in Layton, Utah.';
+        $desc = 'See weekly kickboxing, gi and no-gi jiu-jitsu, wrestling, MMA and kids class times at One Hit MMA in Layton, UT. Drop-ins welcome. Call to confirm.';
+    } elseif (is_page('about')) {
+        $desc = 'Meet One Hit MMA, a Layton, Utah martial arts gym founded by two-time Brazilian National ISKA Champion Aldo Oreggia. Sparring optional, beginners welcome.';
+    } elseif (is_page('instructors')) {
+        $desc = 'Train with Aldo Oreggia, Gustavo Rodrigues and Crystal Olson-Smith at One Hit MMA in Layton, UT. Kickboxing, Brazilian jiu-jitsu and conditioning coaches.';
     } elseif (is_page('contact') || is_page('contact-us')) {
-        $desc = 'Contact One Hit MMA at 192 N Fairfield Rd Suite 2, Layton, UT 84041. Call (801) 644-5707 or send a message. Newsletter signup available.';
+        $desc = 'Call (801) 644-5707 or visit 192 N Fairfield Rd, Suite 2, Layton, UT 84041. Ask about kickboxing, jiu-jitsu, MMA and kids classes at One Hit MMA.';
+    } elseif (is_page('gallery')) {
+        $desc = 'Photos of kickboxing, jiu-jitsu, MMA and kids classes at One Hit MMA in Layton, Utah. See the gym, the coaches and our students in action.';
     }
     if ($desc) {
         echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr($desc) . '">' . "\n";
     }
 }
 add_action('wp_head', 'onehit_meta_description', 1);
 
+function onehit_og_image() {
+    $image = get_template_directory_uri() . '/assets/images/PhotoConcept1.jpg';
+    if (is_page('about')) {
+        $image = get_template_directory_uri() . '/assets/images/aldo-wrapping.jpg';
+    }
+    echo '<meta property="og:image" content="' . esc_url($image) . '">' . "\n";
+    echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+    echo '<meta name="twitter:image" content="' . esc_url($image) . '">' . "\n";
+}
+add_action('wp_head', 'onehit_og_image', 3);
+
 function onehit_localbusiness_schema() {
+    if (!is_front_page() && !is_home()) {
+        return;
+    }
     $schema = array(
         '@context' => 'https://schema.org',
-        '@type'    => 'LocalBusiness',
+        '@type'    => array('SportsActivityLocation', 'ExerciseGym'),
+        '@id'      => home_url('/#gym'),
         'name'     => 'One Hit MMA',
-        'image'    => get_template_directory_uri() . '/assets/images/logo-header-v4.png',
+        'alternateName' => '1 Hit MMA',
+        'description' => 'Kickboxing, Brazilian jiu-jitsu, wrestling, MMA and kids martial arts classes in Layton, Utah. All levels welcome, drop-ins welcome.',
         'url'      => home_url('/'),
+        'logo'     => get_template_directory_uri() . '/assets/images/logo-header-v4.png',
+        'image'    => get_template_directory_uri() . '/assets/images/PhotoConcept1.jpg',
         'telephone'=> '+1-801-644-5707',
         'address'  => array(
             '@type'           => 'PostalAddress',
-            'streetAddress'   => '192 N Fairfield Rd Suite 2',
+            'streetAddress'   => '192 N Fairfield Rd, Suite 2',
             'addressLocality' => 'Layton',
             'addressRegion'   => 'UT',
             'postalCode'      => '84041',
@@ -1277,12 +1306,25 @@ function onehit_localbusiness_schema() {
         ),
         'geo' => array(
             '@type'     => 'GeoCoordinates',
-            'latitude'  => 41.0606,
-            'longitude' => -111.9711,
+            'latitude'  => 41.0624809,
+            'longitude' => -111.9452104,
         ),
-        'openingHoursSpecification' => array(), // can be expanded later
+        'hasMap' => 'https://maps.app.goo.gl/MRWUpjn7TbfRGznCA',
+        'areaServed' => array(
+            array('@type' => 'City', 'name' => 'Layton'),
+            array('@type' => 'City', 'name' => 'Kaysville'),
+            array('@type' => 'City', 'name' => 'Clearfield'),
+            array('@type' => 'City', 'name' => 'Syracuse'),
+            array('@type' => 'City', 'name' => 'Roy'),
+        ),
+        'founder' => array(
+            '@type' => 'Person',
+            'name'  => 'Aldo Oreggia',
+            'jobTitle' => 'Founder and Head Coach',
+        ),
+        'knowsAbout' => array('Kickboxing', 'Brazilian jiu-jitsu', 'Wrestling', 'Mixed martial arts', 'Kids martial arts'),
         'sameAs' => array(
-            'https://www.instagram.com/1hitmma',
+            'https://www.instagram.com/1hitmma/',
         ),
     );
     echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>' . "\n";
