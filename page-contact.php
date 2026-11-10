@@ -108,6 +108,25 @@ $success = isset($_GET['contact']) && $_GET['contact'] === 'success';
         </form>
       </div>
     </div>
+
+    <!-- Map -->
+    <div class="mt-12 rounded-lg overflow-hidden border border-white/10">
+      <iframe
+        src="https://maps.google.com/maps?q=192+N+Fairfield+Rd+Suite+2,+Layton,+UT+84041&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        width="100%"
+        height="420"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="One Hit MMA location on Google Maps">
+      </iframe>
+    </div>
+    <p class="text-center mt-3 text-sm text-gray-400">
+      <a href="https://maps.app.goo.gl/MRWUpjn7TbfRGznCA" target="_blank" rel="noopener" class="underline hover:text-brand-red">Get Directions</a>
+      &nbsp;·&nbsp;
+      <a href="https://share.google/aimode/iIonZuQEzJO3Ahz0y" target="_blank" rel="noopener" class="underline hover:text-brand-red">Leave a Google Review</a>
+    </p>
   </div>
 </main>
 
