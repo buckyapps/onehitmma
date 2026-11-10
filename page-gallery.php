@@ -30,8 +30,16 @@ $photos = onehit_get_gallery();
                   data-caption="<?php echo esc_attr($photo['caption']); ?>"
                   aria-label="<?php echo esc_attr($photo['caption'] ? $photo['caption'] : 'View photo'); ?>">
             <img src="<?php echo esc_url($photo['thumb']); ?>"
-                 alt="<?php echo esc_attr($photo['alt'] ?: $photo['caption']); ?>"
-                 loading="lazy">
+                 alt="<?php
+                   $alt = $photo['alt'] ?: $photo['caption'];
+                   if (!$alt) {
+                     $alt = 'Training, sparring, or class photo at One Hit MMA in Layton, Utah';
+                   }
+                   echo esc_attr($alt);
+                 ?>"
+                 loading="lazy"
+                 width="600"
+                 height="400">
             <?php if ($photo['caption']) : ?>
               <span class="onehit-gallery-cap"><?php echo esc_html($photo['caption']); ?></span>
             <?php endif; ?>
@@ -45,7 +53,7 @@ $photos = onehit_get_gallery();
 <div id="onehit-lightbox" class="onehit-lightbox" hidden>
   <button type="button" class="onehit-lightbox-close" aria-label="Close">&times;</button>
   <button type="button" class="onehit-lightbox-prev" aria-label="Previous">&#10094;</button>
-  <img src="" alt="">
+  <img src="" alt="Expanded gallery photo from One Hit MMA">
   <button type="button" class="onehit-lightbox-next" aria-label="Next">&#10095;</button>
   <p class="onehit-lightbox-caption"></p>
 </div>

@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('ONEHIT_VERSION', '1.6.5');
+define('ONEHIT_VERSION', '1.6.6');
 define('ONEHIT_DIR', get_template_directory());
 define('ONEHIT_URI', get_template_directory_uri());
 
@@ -663,12 +663,16 @@ function onehit_get_gallery() {
         }
         $thumb = wp_get_attachment_image_url($id, 'large');
         $alt   = get_post_meta($id, '_wp_attachment_image_alt', true);
+        if (!$alt) {
+            $filename = basename(get_attached_file($id) ?: '');
+            $alt = $filename ? 'Photo from One Hit MMA in Layton, Utah (' . pathinfo($filename, PATHINFO_FILENAME) . ')' : 'Training or class photo at One Hit MMA in Layton, Utah';
+        }
         $items[] = array(
             'id'      => $id,
             'thumb'   => $thumb ? $thumb : $full,
             'full'    => $full,
             'caption' => isset($captions[$id]) ? $captions[$id] : '',
-            'alt'     => $alt ? $alt : '',
+            'alt'     => $alt,
         );
     }
     return $items;
