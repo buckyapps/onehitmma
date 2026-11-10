@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('ONEHIT_VERSION', '1.6.9');
+define('ONEHIT_VERSION', '1.7.0');
 define('ONEHIT_DIR', get_template_directory());
 define('ONEHIT_URI', get_template_directory_uri());
 
