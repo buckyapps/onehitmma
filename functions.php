@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('ONEHIT_VERSION', '1.6.6');
+define('ONEHIT_VERSION', '1.6.7');
 define('ONEHIT_DIR', get_template_directory());
 define('ONEHIT_URI', get_template_directory_uri());
 
@@ -1192,8 +1192,74 @@ function onehit_ensure_core_templates() {
         }
     }
 }
-add_action('after_switch_theme', 'onehit_ensure_core_templates');
-add_action('admin_init', 'onehit_ensure_core_templates');
+add_action('after_switch_theme', 'onehit_ensure_service_pages');
+add_action('admin_init', 'onehit_ensure_service_pages');
+
+function onehit_ensure_service_pages() {
+    $pages = array(
+        array(
+            'slug'  => 'kids-martial-arts-layton-ut',
+            'title' => 'Kids Martial Arts in Layton, UT',
+            'content' => '<p>One Hit MMA offers kids martial arts classes in Layton, Utah that build confidence, discipline, and real skills. Our kids program includes kickboxing and Brazilian jiu-jitsu in a supportive, high-energy environment.</p>
+<p>Classes are structured for different ages and experience levels. Kids learn striking technique, grappling fundamentals, and how to stay safe while having fun. Parents are welcome to watch.</p>
+<p>We are located at 192 N Fairfield Rd, Suite 2, Layton, UT 84041. Drop-ins are welcome. Call (801) 644-5707 to ask about the current kids schedule or to book a first class.</p>
+<p>One Hit MMA serves families from Layton, Kaysville, Clearfield, Syracuse, and surrounding Davis County.</p>',
+        ),
+        array(
+            'slug'  => 'jiu-jitsu-layton-ut',
+            'title' => 'Brazilian Jiu-Jitsu in Layton, UT',
+            'content' => '<p>Train Brazilian jiu-jitsu (gi and no-gi) at One Hit MMA in Layton, Utah. Our BJJ program is taught by experienced coaches and is open to beginners through advanced students.</p>
+<p>Classes focus on technique, leverage, control, and live rolling. Whether you want self-defense, fitness, or competition, you will find a place here. Drop-ins are welcome.</p>
+<p>Visit us at 192 N Fairfield Rd, Suite 2, Layton, UT 84041 or call (801) 644-5707 to confirm the weekly gi and no-gi schedule.</p>',
+        ),
+        array(
+            'slug'  => 'kickboxing-layton-ut',
+            'title' => 'Kickboxing Classes in Layton, UT',
+            'content' => '<p>One Hit MMA runs kickboxing classes in Layton, Utah for all levels. Learn real striking technique, improve your cardio, and train in a genuine fight gym atmosphere. Sparring is optional.</p>
+<p>Classes cover punches, kicks, knees, defense, and combinations. Beginners are welcome and will be paired appropriately. Advanced students can train harder and prepare for competition.</p>
+<p>We are at 192 N Fairfield Rd, Suite 2, Layton, UT 84041. Call (801) 644-5707 or check the schedule page for current kickboxing times.</p>',
+        ),
+        array(
+            'slug'  => 'mma-layton-ut',
+            'title' => 'MMA Training in Layton, UT',
+            'content' => '<p>MMA training at One Hit MMA in Layton, Utah blends striking, grappling, and wrestling. Classes are designed for people who want authentic mixed martial arts training, whether for fitness or competition.</p>
+<p>You will work with coaches who have competitive backgrounds. All levels are welcome. Drop-ins are fine — just call ahead so we know you are coming.</p>
+<p>Location: 192 N Fairfield Rd, Suite 2, Layton, UT 84041. Phone: (801) 644-5707.</p>',
+        ),
+        array(
+            'slug'  => 'wrestling-layton-ut',
+            'title' => 'Wrestling Classes in Layton, UT',
+            'content' => '<p>Wrestling classes at One Hit MMA in Layton, Utah focus on takedowns, control, and positional dominance. These sessions are great for MMA fighters and anyone who wants to improve their grappling stand-up game.</p>
+<p>Classes typically run Tuesday and Thursday evenings. Beginners and experienced wrestlers are both welcome. Drop-ins are accepted.</p>
+<p>Train with us at 192 N Fairfield Rd, Suite 2, Layton, UT 84041. Call (801) 644-5707 to confirm the current wrestling schedule.</p>',
+        ),
+    );
+
+    foreach ($pages as $p) {
+        $existing = get_page_by_path($p['slug']);
+        if (!$existing) {
+            $id = wp_insert_post(array(
+                'post_title'   => $p['title'],
+                'post_name'    => $p['slug'],
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+                'post_content' => $p['content'],
+            ));
+            if ($id && !is_wp_error($id)) {
+                update_post_meta($id, '_wp_page_template', 'page-service.php');
+            }
+        } else {
+            update_post_meta($existing->ID, '_wp_page_template', 'page-service.php');
+        }
+    }
+}
+
+function onehit_favicon() {
+    $icon = get_template_directory_uri() . '/assets/images/logo-circle.png';
+    echo '<link rel="icon" href="' . esc_url($icon) . '" type="image/png">' . "\n";
+    echo '<link rel="apple-touch-icon" href="' . esc_url($icon) . '">' . "\n";
+}
+add_action('wp_head', 'onehit_favicon', 1);
 
 /**
  * SEO: Custom titles, meta descriptions, LocalBusiness schema
@@ -1219,6 +1285,21 @@ function onehit_force_seo_title($title = '') {
     }
     if (is_page('gallery')) {
         return 'Photo Gallery | One Hit MMA Martial Arts, Layton UT';
+    }
+    if (is_page('kids-martial-arts-layton-ut')) {
+        return 'Kids Martial Arts in Layton, UT | One Hit MMA';
+    }
+    if (is_page('jiu-jitsu-layton-ut')) {
+        return 'Brazilian Jiu-Jitsu in Layton, UT | Gi & No-Gi';
+    }
+    if (is_page('kickboxing-layton-ut')) {
+        return 'Kickboxing Classes in Layton, UT | One Hit MMA';
+    }
+    if (is_page('mma-layton-ut')) {
+        return 'MMA Training in Layton, UT | One Hit MMA';
+    }
+    if (is_page('wrestling-layton-ut')) {
+        return 'Wrestling Classes in Layton, UT | Tue & Thu';
     }
     return $title;
 }
