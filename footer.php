@@ -32,6 +32,9 @@
         <h4 class="font-display text-sm tracking-widest uppercase mb-4 text-gray-300">Quick Links</h4>
         <div class="space-y-2 text-sm text-gray-400">
           <a href="<?php echo esc_url(home_url('/schedule/')); ?>" class="block hover:text-white transition">Class Schedule</a>
+          <a href="<?php echo esc_url(home_url('/kickboxing-layton-ut/')); ?>" class="block hover:text-white transition">Kickboxing</a>
+          <a href="<?php echo esc_url(home_url('/jiu-jitsu-layton-ut/')); ?>" class="block hover:text-white transition">Jiu-Jitsu</a>
+          <a href="<?php echo esc_url(home_url('/kids-martial-arts-layton-ut/')); ?>" class="block hover:text-white transition">Kids Martial Arts</a>
           <a href="<?php echo esc_url(home_url('/gallery/')); ?>" class="block hover:text-white transition">Gallery</a>
           <a href="<?php echo esc_url(home_url('/about/')); ?>" class="block hover:text-white transition">About &amp; Coaches</a>
           <a href="<?php echo esc_url(home_url('/contact-us/')); ?>" class="block hover:text-white transition">Contact / Newsletter</a>
