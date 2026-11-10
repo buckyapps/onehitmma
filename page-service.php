@@ -20,11 +20,11 @@ $content = get_the_content();
       <?php echo apply_filters('the_content', $content); ?>
     </div>
 
-    <div class="mt-12 text-center">
-      <a href="tel:+18016445707" class="inline-block bg-brand-red hover:bg-red-700 text-white font-display tracking-wider px-10 py-4 rounded transition">
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="tel:+18016445707" class="inline-block bg-brand-red hover:bg-red-700 text-white font-display tracking-wider px-10 py-4 rounded transition w-full sm:w-auto text-center">
         Call (801) 644-5707
       </a>
-      <a href="<?php echo esc_url(home_url('/schedule/')); ?>" class="inline-block ml-4 border-2 border-white hover:bg-white hover:text-black font-display tracking-wider px-10 py-4 rounded transition">
+      <a href="<?php echo esc_url(home_url('/schedule/')); ?>" class="inline-block border-2 border-white hover:bg-white hover:text-black font-display tracking-wider px-10 py-4 rounded transition w-full sm:w-auto text-center">
         View Schedule
       </a>
     </div>
