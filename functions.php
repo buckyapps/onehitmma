@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('ONEHIT_VERSION', '1.7.0');
+define('ONEHIT_VERSION', '1.7.1');
 define('ONEHIT_DIR', get_template_directory());
 define('ONEHIT_URI', get_template_directory_uri());
 
@@ -1202,36 +1202,31 @@ function onehit_ensure_service_pages() {
             'title' => 'Kids Martial Arts in Layton, UT',
             'content' => '<p>One Hit MMA offers kids martial arts classes in Layton, Utah that build confidence, discipline, and real skills. Our kids program includes kickboxing and Brazilian jiu-jitsu in a supportive, high-energy environment.</p>
 <p>Classes are structured for different ages and experience levels. Kids learn striking technique, grappling fundamentals, and how to stay safe while having fun. Parents are welcome to watch.</p>
-<p>We are located at 192 N Fairfield Rd, Suite 2, Layton, UT 84041. Drop-ins are welcome. Call (801) 644-5707 to ask about the current kids schedule or to book a first class.</p>
 <p>One Hit MMA serves families from Layton, Kaysville, Clearfield, Syracuse, and surrounding Davis County.</p>',
         ),
         array(
             'slug'  => 'jiu-jitsu-layton-ut',
             'title' => 'Brazilian Jiu-Jitsu in Layton, UT',
             'content' => '<p>Train Brazilian jiu-jitsu (gi and no-gi) at One Hit MMA in Layton, Utah. Our BJJ program is taught by experienced coaches and is open to beginners through advanced students.</p>
-<p>Classes focus on technique, leverage, control, and live rolling. Whether you want self-defense, fitness, or competition, you will find a place here. Drop-ins are welcome.</p>
-<p>Visit us at 192 N Fairfield Rd, Suite 2, Layton, UT 84041 or call (801) 644-5707 to confirm the weekly gi and no-gi schedule.</p>',
+<p>Classes focus on technique, leverage, control, and live rolling. Whether you want self-defense, fitness, or competition, you will find a place here. Drop-ins are welcome.</p>',
         ),
         array(
             'slug'  => 'kickboxing-layton-ut',
             'title' => 'Kickboxing Classes in Layton, UT',
             'content' => '<p>One Hit MMA runs kickboxing classes in Layton, Utah for all levels. Learn real striking technique, improve your cardio, and train in a genuine fight gym atmosphere. Sparring is optional.</p>
-<p>Classes cover punches, kicks, knees, defense, and combinations. Beginners are welcome and will be paired appropriately. Advanced students can train harder and prepare for competition.</p>
-<p>We are at 192 N Fairfield Rd, Suite 2, Layton, UT 84041. Call (801) 644-5707 or check the schedule page for current kickboxing times.</p>',
+<p>Classes cover punches, kicks, knees, defense, and combinations. Beginners are welcome and will be paired appropriately. Advanced students can train harder and prepare for competition.</p>',
         ),
         array(
             'slug'  => 'mma-layton-ut',
             'title' => 'MMA Training in Layton, UT',
             'content' => '<p>MMA training at One Hit MMA in Layton, Utah blends striking, grappling, and wrestling. Classes are designed for people who want authentic mixed martial arts training, whether for fitness or competition.</p>
-<p>You will work with coaches who have competitive backgrounds. All levels are welcome. Drop-ins are fine — just call ahead so we know you are coming.</p>
-<p>Location: 192 N Fairfield Rd, Suite 2, Layton, UT 84041. Phone: (801) 644-5707.</p>',
+<p>You will work with coaches who have competitive backgrounds. All levels are welcome. Drop-ins are fine — just call ahead so we know you are coming.</p>',
         ),
         array(
             'slug'  => 'wrestling-layton-ut',
             'title' => 'Wrestling Classes in Layton, UT',
             'content' => '<p>Wrestling classes at One Hit MMA in Layton, Utah focus on takedowns, control, and positional dominance. These sessions are great for MMA fighters and anyone who wants to improve their grappling stand-up game.</p>
-<p>Classes typically run Tuesday and Thursday evenings. Beginners and experienced wrestlers are both welcome. Drop-ins are accepted.</p>
-<p>Train with us at 192 N Fairfield Rd, Suite 2, Layton, UT 84041. Call (801) 644-5707 to confirm the current wrestling schedule.</p>',
+<p>Classes typically run Tuesday and Thursday evenings. Beginners and experienced wrestlers are both welcome. Drop-ins are accepted.</p>',
         ),
     );
 
@@ -1250,6 +1245,11 @@ function onehit_ensure_service_pages() {
             }
         } else {
             update_post_meta($existing->ID, '_wp_page_template', 'page-service.php');
+            // Refresh content so address/phone paragraphs are removed
+            wp_update_post(array(
+                'ID'           => $existing->ID,
+                'post_content' => $p['content'],
+            ));
         }
     }
 }
