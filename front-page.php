@@ -79,18 +79,18 @@ $hero_text = onehit_get_option('onehit_hero_text', 'Authentic Kickboxing, Jiu-Ji
     </div>
     
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="relative overflow-hidden border border-white/10 p-8 rounded-lg hover:border-brand-red/50 transition group min-h-[280px] flex flex-col justify-end">
+      <a href="<?php echo esc_url(home_url('/kickboxing-layton-ut/')); ?>" class="relative overflow-hidden border border-white/10 p-8 rounded-lg hover:border-brand-red/50 transition group min-h-[280px] flex flex-col justify-end block">
         <div class="absolute inset-0">
-          <img src="<?php echo esc_url(ONEHIT_URI . '/assets/images/kickboxing-bg-v2.jpg'); ?>" alt="" class="w-full h-full object-cover object-center">
+          <img src="<?php echo esc_url(ONEHIT_URI . '/assets/images/kickboxing-bg-v2.jpg'); ?>" alt="Kickboxing class at One Hit MMA in Layton, Utah" class="w-full h-full object-cover object-center">
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40"></div>
         </div>
         <div class="relative">
           <h3 class="font-display text-2xl font-bold mb-3 text-brand-red">Kickboxing</h3>
           <p class="text-gray-300 text-sm leading-relaxed">High-intensity striking classes that build cardio, power, and real-world self-defense skills. Great for all fitness levels.</p>
         </div>
-      </div>
+      </a>
       
-      <div class="relative overflow-hidden border border-white/10 p-8 rounded-lg hover:border-brand-red/50 transition group min-h-[280px] flex flex-col justify-end">
+      <a href="<?php echo esc_url(home_url('/jiu-jitsu-layton-ut/')); ?>" class="relative overflow-hidden border border-white/10 p-8 rounded-lg hover:border-brand-red/50 transition group min-h-[280px] flex flex-col justify-end block">
         <div class="absolute inset-0">
           <img src="<?php echo esc_url(ONEHIT_URI . '/assets/images/jiujitsu-bg.jpg'); ?>" alt="One Hit MMA jiu-jitsu grappling on the mat" class="w-full h-full object-cover object-center">
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40"></div>
@@ -99,9 +99,9 @@ $hero_text = onehit_get_option('onehit_hero_text', 'Authentic Kickboxing, Jiu-Ji
           <h3 class="font-display text-2xl font-bold mb-3 text-brand-red">Jiu-Jitsu</h3>
           <p class="text-gray-300 text-sm leading-relaxed">Brazilian Jiu-Jitsu focused on technique, leverage, and control. Learn to defend yourself from any position.</p>
         </div>
-      </div>
+      </a>
       
-      <div class="relative overflow-hidden border border-white/10 p-8 rounded-lg hover:border-brand-red/50 transition group min-h-[280px] flex flex-col justify-end">
+      <a href="<?php echo esc_url(home_url('/kids-martial-arts-layton-ut/')); ?>" class="relative overflow-hidden border border-white/10 p-8 rounded-lg hover:border-brand-red/50 transition group min-h-[280px] flex flex-col justify-end block">
         <div class="absolute inset-0">
           <img src="<?php echo esc_url(ONEHIT_URI . '/assets/images/mma-kids-bg-v2.jpg'); ?>" alt="One Hit MMA kids champions" class="w-full h-full object-cover object-[center_25%]">
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40"></div>
@@ -110,7 +110,7 @@ $hero_text = onehit_get_option('onehit_hero_text', 'Authentic Kickboxing, Jiu-Ji
           <h3 class="font-display text-2xl font-bold mb-3 text-brand-red">MMA &amp; Kids</h3>
           <p class="text-gray-300 text-sm leading-relaxed">Full MMA training for competitors and adults. Fun, structured kids programs that build confidence and discipline.</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
