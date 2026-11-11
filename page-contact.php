@@ -125,7 +125,7 @@ $success = isset($_GET['contact']) && $_GET['contact'] === 'success';
     <p class="text-center mt-3 text-sm text-gray-400">
       <a href="https://maps.app.goo.gl/MRWUpjn7TbfRGznCA" target="_blank" rel="noopener" class="underline hover:text-brand-red">Get Directions</a>
       &nbsp;·&nbsp;
-      <a href="https://share.google/40UI0Wkc5zpDcm0OE" target="_blank" rel="noopener" class="text-brand-red text-xl font-bold underline hover:text-red-400 transition">Leave a Google Review</a>
+      <a href="https://share.google/ogLj8B6HDH9zQ0hOp" target="_blank" rel="noopener" class="text-brand-red text-xl font-bold underline hover:text-red-400 transition">Leave a Google Review</a>
     </p>
   </div>
 </main>
