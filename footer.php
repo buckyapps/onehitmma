@@ -25,7 +25,7 @@
             <?php echo esc_html(onehit_get_option('onehit_phone', '(801) 644-5707')); ?>
           </a>
           <br>
-          <a href="https://share.google/aimode/iIonZuQEzJO3Ahz0y" target="_blank" rel="noopener" class="inline-block mt-3 text-brand-red text-lg sm:text-xl font-bold underline hover:text-red-400 transition">
+          <a href="https://share.google/40UI0Wkc5zpDcm0OE" target="_blank" rel="noopener" class="inline-block mt-3 text-brand-red text-lg sm:text-xl font-bold underline hover:text-red-400 transition">
             Leave a Google Review
           </a>
         </p>
